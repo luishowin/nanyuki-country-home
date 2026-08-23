@@ -149,7 +149,7 @@
         .then(function (res) {
           if (res.ok) {
             form.reset();
-            setStatus("ok", "Thank you, your enquiry is on its way. We’ll reply within 24 hours.");
+            setStatus("ok", "Thank you, your enquiry is on its way. We’ll reply within 12 hours.");
           } else {
             return res.json().then(function (data) {
               var m = data && data.errors ? data.errors.map(function (x) { return x.message; }).join(", ")

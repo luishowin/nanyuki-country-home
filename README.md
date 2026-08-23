@@ -10,7 +10,7 @@ Formspree enquiries, WhatsApp, Google Maps embed, and SEO/schema baked in.
 ## Structure
 
 ```
-/
+docs/                   (the published site root — GitHub Pages serves from here)
 ├── index.html          Home — hero, intro, amenities teaser, attractions, reviews, CTA
 ├── about.html          About — story, rates, how to book, house rules
 ├── gallery.html        Photo gallery (lightbox)
@@ -24,7 +24,7 @@ Formspree enquiries, WhatsApp, Google Maps embed, and SEO/schema baked in.
 └── assets/
     ├── css/styles.css  All styling + tokens + responsive + reduced-motion
     ├── js/main.js      Nav, reveal, lightbox, Formspree submit
-    └── img/            Placeholder images (SVG) + OG cover + icons
+    └── img/            Property photography (AVIF) + attraction shots + OG cover + icons
 ```
 
 Header and footer markup is repeated in each page (static site, no includes) — if
@@ -36,7 +36,7 @@ you change a nav link or footer detail, update it in **every** `.html` file.
 
 1. Create a repo and push these files to the root of the `main` branch.
 2. Repo **Settings → Pages → Build and deployment**: Source = *Deploy from a branch*,
-   Branch = `main`, Folder = `/ (root)`. Save.
+   Branch = `main`, Folder = `/docs`. Save.
 3. Site goes live at `https://<username>.github.io/<repo>/` in a minute or two.
 4. All links are **relative**, so it works from that sub-path with no changes.
 
@@ -56,24 +56,23 @@ Search-and-replace across all files:
 |---|---|
 | `REPLACE-WITH-DOMAIN` | the live domain (canonical, Open Graph, sitemap, robots, schema) |
 | `your-form-id` in `contact.html` | your Formspree form ID |
-| `000000000000` | the WhatsApp number in full international format, **no + or spaces** (e.g. `254712345678`) |
-| `hello@example.com` | the real enquiry email |
-| `+254 000 000 000` | the display phone number |
-| `+254-000-000-000` (schema, index) | the real phone |
 
-Then swap the **real content**:
+Once the domain is set, note the `og:image` URLs must stay **absolute** — they
+already point at `REPLACE-WITH-DOMAIN`.
 
-- **Photos** — replace every file in `assets/img/` (the `g-*`, `about-*`, `hero`,
-  `attr-*` placeholders are **labelled with the shot they represent**, so they
-  double as a shot list for the photographer). Use optimised **WebP/JPG**, keep the
-  filenames or update the `src`s, and set a meaningful `alt` on each.
-- **OG cover** — replace `assets/img/og-cover.jpg` with a real 1200×630 photo
-  (JPG/PNG — social scrapers don't render SVG). Once the domain is set, the
-  `og:image` URLs must be **absolute** (they already point at `REPLACE-WITH-DOMAIN`).
-- **Facts** — bedroom/bath counts, "sleeps", check-in/out, minimum stay (placeholders in `index.html` and `about.html`).
-- **Reviews** — swap the placeholder testimonials for real, attributed Airbnb reviews.
-- **Distances** — attraction drive times on `attractions.html` are marked "verify".
-- **Copy** — the written content is placeholder-quality; drop in the Phase One copy when it's ready.
+Real content is in: contact details, whole-house seasonal rates, drive times,
+three attributed Google reviews, house policies, and the property photography.
+
+Still worth improving:
+
+- **Low-resolution attraction cards** — `attr-mweafalls.avif` (401×301) and
+  `attr-equator.avif` (600×450) are well under the ~1600px the other cards use, so
+  both look soft on high-DPI screens. Swap in higher-resolution originals if they
+  turn up; the `src` is a one-line change in `index.html` / `attractions.html`.
+- **Ol Pejeta and Solio** — the last two stock images (`attr-*.jpg`). Every other
+  photo on the site is genuine.
+- **Solio drive time** — the card says "Day trip from the house" because no figure
+  was confirmed.
 
 ---
 
@@ -88,7 +87,7 @@ Then swap the **real content**:
 ### Attribution (important — no analytics on this site)
 The **"How did you hear about us?"** field is the *only* thing tying an enquiry to a
 marketing channel, which the 10% commission depends on. To make it reliable, tag the
-links you post from Instagram / TikTok / Facebook with UTM parameters, e.g.
+links you post from Instagram / TikTok with UTM parameters, e.g.
 `https://REPLACE-WITH-DOMAIN/?utm_source=instagram&utm_medium=social`, and keep an eye
 on the source dropdown in submissions.
 
