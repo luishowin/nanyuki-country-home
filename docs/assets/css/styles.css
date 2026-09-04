@@ -1,5 +1,5 @@
 /* =========================================================================
-   Nanyuki Holiday Home - styles.css
+   Nanyuki Country Home - styles.css
    Minimalist editorial system. White bg, black ink, grey secondary.
    Display: Cormorant Garamond · Body/UI: Inter.
    ========================================================================= */
@@ -232,7 +232,9 @@ p.lead {
 .hero { position: relative; }
 .hero-media {
   position: relative;
-  width: 100vw;
+  /* 100% not 100vw: 100vw includes the scrollbar, which pushed the page into
+     horizontal scroll on desktop (a mobile-usability flag in Search Console). */
+  width: 100%;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
@@ -458,6 +460,26 @@ input:focus, select:focus, textarea:focus {
 .footer-base p { font-size: var(--text-xs); color: var(--muted); }
 .footer-base a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
 .footer-base .credit, .footer-base .credit a { font-family: var(--font-mono); }
+
+/* ---- Legal / long-form prose (privacy policy) ------------------------- */
+.legal { max-width: 72ch; }
+.legal > * + * { margin-top: 1.1rem; }
+.legal h2 {
+  font-size: clamp(1.35rem, 1.15rem + 0.9vw, 1.75rem);
+  margin-top: clamp(2.25rem, 4vw, 3rem);
+}
+.legal h2:first-of-type { margin-top: 1.75rem; }
+.legal p, .legal li { color: var(--muted); }
+.legal b { color: var(--ink); font-weight: 600; }
+.legal ul { padding-left: 1.2rem; }
+.legal li { margin-top: 0.5rem; }
+.legal li::marker { color: var(--line-strong); }
+.legal a { text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { color: var(--ink); }
+.legal-meta {
+  font-family: var(--font-mono); font-size: var(--text-xs); color: var(--muted);
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--line);
+}
 
 /* ---- Scroll reveal ---------------------------------------------------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease), transform .8s var(--ease); }

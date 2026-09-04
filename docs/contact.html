@@ -3,16 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact &amp; enquiries | Nanyuki Holiday Home</title>
-  <meta name="description" content="Enquire about a stay at Nanyuki Holiday Home. Send your dates via the form or WhatsApp. We reply within 12 hours. Location map and FAQs.">
-  <link rel="canonical" href="https://REPLACE-WITH-DOMAIN/contact.html">
+  <title>Contact &amp; Enquiries | Nanyuki Country Home</title>
+  <meta name="description" content="Enquire about a stay at Nanyuki Country Home. Send your dates by form or WhatsApp and we reply within 12 hours. Location map, rates and FAQs.">
+
+  <link rel="canonical" href="https://nanyukicountryhome.com/contact.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nanyuki Holiday Home">
-  <meta property="og:title" content="Contact &amp; enquiries | Nanyuki Holiday Home">
-  <meta property="og:description" content="Send your dates. We reply within 12 hours.">
-  <meta property="og:url" content="https://REPLACE-WITH-DOMAIN/contact.html">
-  <meta property="og:image" content="https://REPLACE-WITH-DOMAIN/assets/img/og-cover.jpg">
+  <meta property="og:site_name" content="Nanyuki Country Home">
+  <meta property="og:title" content="Contact &amp; Enquiries | Nanyuki Country Home">
+  <meta property="og:description" content="Send us your dates. We reply within 12 hours.">
+  <meta property="og:url" content="https://nanyukicountryhome.com/contact.html">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:image" content="https://nanyukicountryhome.com/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The living room at Nanyuki Country Home, opening onto the garden">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nanyukicountryhome.com/assets/img/og-cover.jpg">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -23,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- FAQ structured data (helps FAQ rich results). Update answers to match reality before publishing. -->
+  <!-- FAQ structured data. Every Q&A here must match the visible FAQ below word for word. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,6 +37,8 @@
     "mainEntity": [
       { "@type": "Question", "name": "Do we get the whole house to ourselves?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. The property is booked exclusively for your group for the duration of the stay, with no shared spaces." } },
+      { "@type": "Question", "name": "How many people can the house sleep?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Up to 16 guests across 7 bedrooms and 7 bathrooms, with the whole house yours alone. Tell us your group and we will confirm the best bed configuration." } },
       { "@type": "Question", "name": "Is there backup power and reliable water?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. The home has backup power for outages and a consistent hot and cold water supply." } },
       { "@type": "Question", "name": "How do we book and pay?",
@@ -44,13 +52,23 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nanyukicountryhome.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact & enquiries", "item": "https://nanyukicountryhome.com/contact.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Nanyuki Holiday Home</a>
+      <a class="brand" href="index.html">Nanyuki Country Home</a>
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="about.html">About</a>
         <a href="gallery.html">Gallery</a>
@@ -81,13 +99,7 @@
 
           <!-- ENQUIRY FORM -->
           <div>
-            <!--
-              FORMSPREE SETUP:
-              1. Create a free form at https://formspree.io and copy your form ID.
-              2. Replace "your-form-id" below with it, e.g. action="https://formspree.io/f/xayzeqwr".
-              Until then, the form shows a "not connected yet" message instead of sending.
-            -->
-            <form id="enquiryForm" action="https://formspree.io/f/your-form-id" method="POST" class="form" novalidate>
+            <form id="enquiryForm" action="https://formspree.io/f/xqpklldy" method="POST" class="form" novalidate>
               <div class="row-2">
                 <div class="field">
                   <label for="name">Name <span class="req">*</span></label>
@@ -106,7 +118,7 @@
                 </div>
                 <div class="field">
                   <label for="guests">Guests</label>
-                  <input type="number" id="guests" name="guests" min="1" max="20" placeholder="e.g. 4">
+                  <input type="number" id="guests" name="guests" min="1" max="16" placeholder="e.g. 8">
                 </div>
               </div>
 
@@ -142,10 +154,10 @@
 
               <!-- anti-spam honeypot: leave empty -->
               <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <input type="hidden" name="_subject" value="New enquiry: Nanyuki Holiday Home">
+              <input type="hidden" name="_subject" value="New enquiry: Nanyuki Country Home">
 
               <button type="submit" class="btn btn--primary">Send enquiry</button>
-              <p class="form-note">We reply within 12 hours. Your details are only used to answer your enquiry.</p>
+              <p class="form-note">We reply within 12 hours. Your details are only used to answer your enquiry — see our <a href="privacy.html">privacy policy</a>.</p>
               <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -154,7 +166,7 @@
           <aside class="contact-aside">
             <div class="info-item">
               <p class="k">WhatsApp</p>
-              <a href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Holiday%20Home" target="_blank" rel="noopener">+254 723 426190</a>
+              <a href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Country%20Home" target="_blank" rel="noopener">+254 723 426190</a>
             </div>
             <div class="info-item">
               <p class="k">Email</p>
@@ -175,7 +187,7 @@
               <p>Within 12 hours</p>
             </div>
             <div class="btn-row" style="margin-top:1.5rem;">
-              <a class="btn btn--wa" href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Holiday%20Home" target="_blank" rel="noopener">Chat on WhatsApp</a>
+              <a class="btn btn--wa" href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Country%20Home" target="_blank" rel="noopener">Chat on WhatsApp</a>
             </div>
           </aside>
 
@@ -184,7 +196,7 @@
         <!-- MAP -->
         <div class="map-embed reveal" id="map">
           <iframe
-            title="Map showing the location of Nanyuki Holiday Home"
+            title="Map showing the location of Nanyuki Country Home"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7850.667892267528!2d37.02233967183191!3d-0.0559771227789699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18281f13f279b45d%3A0xf47a7d6c447fe451!2sNanyuki%20holiday%20home!5e0!3m2!1sen!2ske!4v1783936050688!5m2!1sen!2ske"
             allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
@@ -202,6 +214,10 @@
           <details>
             <summary>Do we get the whole house to ourselves?</summary>
             <p>Yes. The property is booked exclusively for your group for the whole stay, with no shared spaces.</p>
+          </details>
+          <details>
+            <summary>How many people can the house sleep?</summary>
+            <p>Up to 16 guests across 7 bedrooms and 7 bathrooms, with the whole house yours alone. Tell us your group and we’ll confirm the best bed configuration.</p>
           </details>
           <details>
             <summary>Is there backup power and reliable water?</summary>
@@ -232,7 +248,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <p class="footer-logo">Nanyuki Holiday Home</p>
+        <p class="footer-logo">Nanyuki Country Home</p>
         <p class="muted">A private holiday home in Nanyuki, at the foot of Mt Kenya. Yours alone for the stay.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
@@ -241,13 +257,14 @@
         <a href="amenities.html">Amenities</a>
         <a href="attractions.html">Attractions</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
       <div class="footer-contact">
         <a href="mailto:nanyukicountryhome@gmail.com">nanyukicountryhome@gmail.com</a>
         <a href="https://wa.me/254723426190" target="_blank" rel="noopener">WhatsApp: +254 723 426190</a>
         <a href="#enquire">Send an enquiry →</a>
         <div class="socials">
-          <a href="https://www.instagram.com/nanyukicountryhome/" aria-label="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/nanyuki.country.home/" aria-label="Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="https://www.tiktok.com/@nanyukicountryhome" aria-label="TikTok" target="_blank" rel="noopener">
@@ -257,7 +274,7 @@
       </div>
     </div>
     <div class="container footer-base">
-      <p>© <span id="year">2026</span> Nanyuki Holiday Home. All rights reserved.</p>
+      <p>© <span id="year">2026</span> Nanyuki Country Home. All rights reserved.</p>
       <p class="credit">Site by <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></p>
     </div>
   </footer>

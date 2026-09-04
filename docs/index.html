@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nanyuki Holiday Home | A private retreat at the foot of Mt Kenya</title>
-  <meta name="description" content="A spacious private holiday home in Nanyuki, Kenya, minutes from Mt Kenya and Ol Pejeta. Enquire directly for stays. Backup power, fast internet, chef on request.">
+  <title>Nanyuki Country Home | Private Holiday House, Mt Kenya</title>
+  <meta name="description" content="A private 7-bedroom holiday home in Nanyuki, Kenya, sleeping up to 16. Whole house only, from KES 40,000 a night, minutes from Mt Kenya and Ol Pejeta.">
 
-  <!-- Swap REPLACE-WITH-DOMAIN for the live domain once it's set. og:image must be an absolute URL for WhatsApp / Facebook link previews. -->
-  <link rel="canonical" href="https://REPLACE-WITH-DOMAIN/">
+  <link rel="canonical" href="https://nanyukicountryhome.com/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nanyuki Holiday Home">
-  <meta property="og:title" content="Nanyuki Holiday Home | A private retreat at the foot of Mt Kenya">
-  <meta property="og:description" content="A spacious private holiday home in Nanyuki, Kenya. Enquire directly for stays.">
-  <meta property="og:url" content="https://REPLACE-WITH-DOMAIN/">
-  <meta property="og:image" content="https://REPLACE-WITH-DOMAIN/assets/img/og-cover.jpg">
+  <meta property="og:site_name" content="Nanyuki Country Home">
+  <meta property="og:title" content="Nanyuki Country Home | Private Holiday House, Mt Kenya">
+  <meta property="og:description" content="A private holiday home in Nanyuki, Kenya. Seven bedrooms, sleeps up to 16, the whole house yours alone.">
+  <meta property="og:url" content="https://nanyukicountryhome.com/">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:image" content="https://nanyukicountryhome.com/assets/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The living room at Nanyuki Country Home, opening onto the garden">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nanyukicountryhome.com/assets/img/og-cover.jpg">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="assets/img/favicon-32.png">
@@ -26,18 +30,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preload" as="image" type="image/avif" href="assets/img/hero-living.avif" fetchpriority="high">
 
-  <!-- Structured data: helps Google Search + Maps. Replace phone/address once confirmed. -->
+  <!-- Structured data: LodgingBusiness for Google Search + Maps. Keep in step with the
+       visible copy (rates, capacity, amenities) whenever those change. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "name": "Nanyuki Holiday Home",
-    "description": "A private holiday home in Nanyuki, Kenya, at the foot of Mt Kenya.",
-    "url": "https://REPLACE-WITH-DOMAIN/",
-    "image": "https://REPLACE-WITH-DOMAIN/assets/img/og-cover.jpg",
+    "@id": "https://nanyukicountryhome.com/#lodging",
+    "name": "Nanyuki Country Home",
+    "description": "A private holiday home in Nanyuki, Kenya, at the foot of Mt Kenya. Seven bedrooms sleeping up to 16, with the whole house yours alone for the stay.",
+    "url": "https://nanyukicountryhome.com/",
+    "image": [
+      "https://nanyukicountryhome.com/assets/img/og-cover.jpg",
+      "https://nanyukicountryhome.com/assets/img/hero-living.avif",
+      "https://nanyukicountryhome.com/assets/img/gal-bedroom-main.avif",
+      "https://nanyukicountryhome.com/assets/img/gal-terrace.avif"
+    ],
     "telephone": "+254-723-426190",
+    "email": "nanyukicountryhome@gmail.com",
     "priceRange": "KES 40,000-60,000 per night (whole house)",
+    "currenciesAccepted": "KES",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nanyuki",
@@ -45,13 +59,34 @@
       "addressCountry": "KE"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": -0.0559771, "longitude": 37.0223397 },
+    "hasMap": "https://maps.google.com/?cid=17616530796372288593",
+    "sameAs": [
+      "https://www.instagram.com/nanyuki.country.home/",
+      "https://www.tiktok.com/@nanyukicountryhome",
+      "https://maps.google.com/?cid=17616530796372288593"
+    ],
+    "numberOfRooms": 7,
+    "checkinTime": "14:00",
+    "checkoutTime": "10:00",
+    "smokingAllowed": false,
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Backup power", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Heating", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Fast internet", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "24-hour security", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Chef on request", "value": true }
-    ]
+      { "@type": "LocationFeatureSpecification", "name": "Chef on request", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Secure parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Fully-equipped kitchen", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Garden and grounds", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Reliable hot and cold water", "value": true }
+    ],
+    "containsPlace": {
+      "@type": "Accommodation",
+      "name": "The whole house",
+      "occupancy": { "@type": "QuantitativeValue", "maxValue": 16, "unitText": "guests" },
+      "numberOfBedrooms": 7,
+      "numberOfBathroomsTotal": 7
+    }
   }
   </script>
 </head>
@@ -60,7 +95,7 @@
 
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Nanyuki Holiday Home</a>
+      <a class="brand" href="index.html">Nanyuki Country Home</a>
       <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="about.html">About</a>
         <a href="gallery.html">Gallery</a>
@@ -80,12 +115,12 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-media">
-        <img src="assets/img/hero-living.avif" alt="The main living room at Nanyuki Holiday Home, opening onto the garden">
+        <img src="assets/img/hero-living.avif" alt="The main living room at Nanyuki Country Home, opening onto the garden" width="2400" height="1350" fetchpriority="high" decoding="async">
         <div class="hero-copy">
           <div class="container">
             <span class="eyebrow">Nanyuki · Kenya</span>
             <h1>A private retreat at the foot of Mt&nbsp;Kenya</h1>
-            <p class="lead">A spacious, modern home to come back to after the mountain, the conservancy and the plains, yours alone for the stay.</p>
+            <p class="lead">A spacious, modern home to come back to after the mountain, the conservancy and the plains. Seven bedrooms, sleeping up to 16, yours alone for the stay.</p>
             <div class="btn-row">
               <a class="btn btn--primary" href="contact.html#enquire">Enquire about dates</a>
               <a class="btn btn--ghost" href="gallery.html">View the home</a>
@@ -106,13 +141,13 @@
       <div class="container">
         <div class="split">
           <div class="split-media reveal">
-            <img src="assets/img/living-wide.avif" alt="The open-plan living area at Nanyuki Holiday Home">
+            <img src="assets/img/living-wide.avif" alt="The open-plan living area at Nanyuki Country Home" width="1600" height="1067" loading="lazy" decoding="async">
           </div>
           <div class="split-copy">
             <span class="eyebrow reveal">The home</span>
             <h2 class="reveal">Space to breathe, an hour from the wild</h2>
             <p class="reveal muted">Set in a quiet corner of Nanyuki, the house pairs generous, light-filled rooms with a garden that looks toward the mountain. It’s built for the way people actually travel here: early starts for game drives, long lunches, and evenings that slow right down.</p>
-            <p class="reveal muted">Whether it’s a family, a couple or a small group, you have the whole place to yourselves, with the comforts that make a Kenyan holiday effortless.</p>
+            <p class="reveal muted">Whether it’s a family, a couple or a group of up to 16, you have the whole place to yourselves, with the comforts that make a Kenyan holiday effortless.</p>
             <div class="btn-row reveal">
               <a class="btn btn--ghost" href="about.html">More about the property</a>
             </div>
@@ -126,7 +161,7 @@
       <div class="container">
         <div class="facts" data-stagger>
           <div class="fact reveal"><div class="n">7</div><div class="k">Bedrooms</div></div>
-          <div class="fact reveal"><div class="n">9</div><div class="k">Sleeps</div></div>
+          <div class="fact reveal"><div class="n">16</div><div class="k">Sleeps</div></div>
           <div class="fact reveal"><div class="n">7</div><div class="k">Bathrooms</div></div>
           <div class="fact reveal"><div class="n">24h</div><div class="k">Security</div></div>
         </div>
@@ -166,7 +201,7 @@
         </div>
         <div class="card-grid" data-stagger>
           <article class="card reveal">
-            <div class="card-media"><img src="assets/img/attr-mtkenya.avif" alt="The peak of Mt Kenya at dusk, seen from the property"></div>
+            <div class="card-media"><img src="assets/img/attr-mtkenya.avif" alt="The peak of Mt Kenya at dusk, seen from the property" width="1600" height="1200" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="meta">25 min drive to the nearest gate</p>
               <h3>Mt Kenya</h3>
@@ -174,7 +209,7 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="card-media"><img src="assets/img/attr-olpejeta.jpg" alt="Ol Pejeta Conservancy"></div>
+            <div class="card-media"><img src="assets/img/attr-olpejeta.jpg" alt="Ol Pejeta Conservancy" width="1080" height="727" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="meta">45 min drive</p>
               <h3>Ol Pejeta Conservancy</h3>
@@ -182,7 +217,7 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="card-media"><img src="assets/img/attr-equator.avif" alt="The Equator signs beside the road at Nanyuki"></div>
+            <div class="card-media"><img src="assets/img/attr-equator.avif" alt="The Equator signs beside the road at Nanyuki" width="600" height="450" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="meta">In Nanyuki town</p>
               <h3>The Equator</h3>
@@ -230,7 +265,7 @@
         <p class="reveal">Tell us your dates and who’s coming, and we’ll confirm availability within 12 hours.</p>
         <div class="btn-row reveal">
           <a class="btn btn--primary" href="contact.html#enquire">Make an enquiry</a>
-          <a class="btn btn--ghost" href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Holiday%20Home" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="btn btn--ghost" href="https://wa.me/254723426190?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay%20at%20Nanyuki%20Country%20Home" target="_blank" rel="noopener">Message on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -240,7 +275,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <p class="footer-logo">Nanyuki Holiday Home</p>
+        <p class="footer-logo">Nanyuki Country Home</p>
         <p class="muted">A private holiday home in Nanyuki, at the foot of Mt Kenya. Yours alone for the stay.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
@@ -249,13 +284,14 @@
         <a href="amenities.html">Amenities</a>
         <a href="attractions.html">Attractions</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
       <div class="footer-contact">
         <a href="mailto:nanyukicountryhome@gmail.com">nanyukicountryhome@gmail.com</a>
         <a href="https://wa.me/254723426190" target="_blank" rel="noopener">WhatsApp: +254 723 426190</a>
         <a href="contact.html#enquire">Send an enquiry →</a>
         <div class="socials">
-          <a href="https://www.instagram.com/nanyukicountryhome/" aria-label="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/nanyuki.country.home/" aria-label="Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
           </a>
           <a href="https://www.tiktok.com/@nanyukicountryhome" aria-label="TikTok" target="_blank" rel="noopener">
@@ -265,7 +301,7 @@
       </div>
     </div>
     <div class="container footer-base">
-      <p>© <span id="year">2026</span> Nanyuki Holiday Home. All rights reserved.</p>
+      <p>© <span id="year">2026</span> Nanyuki Country Home. All rights reserved.</p>
       <p class="credit">Site by <a href="https://beben.design" target="_blank" rel="noopener">Beben Design</a></p>
     </div>
   </footer>

@@ -1,5 +1,5 @@
 /* =========================================================================
-   Nanyuki Holiday Home - main.js
+   Nanyuki Country Home - main.js
    Header state · mobile nav · scroll reveal · lightbox · Formspree submit
    ========================================================================= */
 (function () {
@@ -131,12 +131,11 @@
       // honeypot: silently drop bots
       if (form.querySelector('[name="_gotcha"]') && form.querySelector('[name="_gotcha"]').value) return;
 
-      var action = form.getAttribute("action") || "";
-      if (action.indexOf("your-form-id") !== -1 || action.indexOf("FORM_ID") !== -1) {
-        setStatus("err", "Enquiry form isn’t connected yet. Add your Formspree form ID to go live. (Placeholder)");
-        return;
-      }
+      // the form carries novalidate, so check required fields here rather than
+      // round-tripping an empty submit to Formspree for a 422
+      if (!form.checkValidity()) { form.reportValidity(); return; }
 
+      var action = form.getAttribute("action") || "";
       var btn = form.querySelector('button[type="submit"]');
       var label = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
