@@ -55,6 +55,31 @@ The `github.io` URL serves the same pages, so the site exists at two hostnames.
 The `rel="canonical"` tags all point at the apex, which is enough to keep the
 duplicate out of the index.
 
+### Redeploying the Worker
+In the Cloudflare dashboard, open the Worker and look at its deployment list.
+Each row shows one of two things, and they need different handling:
+
+- **A branch and commit hash** — the Worker is connected to this repo through
+  Workers Builds. *New deployment* rebuilds from the latest commit; check the
+  commit it offers is the one you just pushed.
+- **"Direct upload"**, or no Git information at all — the Worker was uploaded by
+  hand and will never see a `git push`. *New deployment* asks you for files.
+  Connect the repo under **Settings → Builds** so this stops being manual.
+
+Whichever route, **the site root is `docs/`, not the repo root**. Any build or
+output directory setting has to say `docs`, or the deployment serves nothing.
+
+Then confirm the deploy actually landed — the apex, not `github.io`:
+
+```bash
+curl -s https://nanyukicountryhome.com/sitemap.xml | grep -c image:loc          # expect 23
+curl -s -o /dev/null -w "%{http_code}\n" https://nanyukicountryhome.com/privacy # expect 200
+curl -s https://nanyukicountryhome.com/ | grep -c REPLACE-WITH-DOMAIN            # expect 0
+```
+
+A stale apex fails these while the repo and `github.io` both look perfect, which
+is exactly how the pre-rebrand build survived a push and a Search Console link.
+
 ### URL form — clean URLs, no `.html`
 The Worker serves clean URLs: `/about.html` 308-redirects to `/about`, and
 `/index.html` to `/`. So `rel="canonical"`, `og:url`, the `sitemap.xml` `<loc>`
