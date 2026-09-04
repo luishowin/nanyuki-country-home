@@ -39,21 +39,35 @@ you change a nav link or footer detail, update it in **every** `.html` file.
 
 ## Deploy
 
-Push to `main`. GitHub Pages serves `/docs`; the apex domain
-**https://nanyukicountryhome.com** sits in front, behind Cloudflare.
+**A push to `main` does not update the live site.** GitHub Pages serves `/docs` at
+`https://luishowin.github.io/nanyuki-country-home/`, and that does follow `main`.
+The apex domain **https://nanyukicountryhome.com** is served by a separate
+**Cloudflare Worker** holding its own copy of the assets, and nothing in this repo
+deploys it — there is no `wrangler` config and no `.github/workflows`. Redeploy the
+Worker by hand after pushing, or connect Workers Builds to this repo so the two
+stay in step. Skipping it is how the site sat on the pre-rebrand build for a while.
 
 Canonical URLs, Open Graph tags, `sitemap.xml`, `robots.txt` and the JSON-LD all
 carry the absolute domain — if the domain ever changes, search-and-replace
 `nanyukicountryhome.com` across `docs/`.
 
-**Open item:** `https://luishowin.github.io/nanyuki-country-home/` also serves the
-site with no redirect, so the same pages exist at two hostnames. The
-`rel="canonical"` tags point search engines at the apex, which is enough to stop
-the duplicate being indexed. The tidier fix is to set the custom domain under
-**Settings → Pages** — GitHub then commits `docs/CNAME` and 301s the `github.io`
-path — or to switch the GitHub Pages site off if Cloudflare Pages is doing the
-real hosting. Neither has been done; check which host actually serves the apex
-before changing anything.
+The `github.io` URL serves the same pages, so the site exists at two hostnames.
+The `rel="canonical"` tags all point at the apex, which is enough to keep the
+duplicate out of the index.
+
+### URL form — clean URLs, no `.html`
+The Worker serves clean URLs: `/about.html` 308-redirects to `/about`, and
+`/index.html` to `/`. So `rel="canonical"`, `og:url`, the `sitemap.xml` `<loc>`
+values and the BreadcrumbList `item` URLs are all written **without** the `.html`
+extension — a canonical that points at a redirect is a weak signal, and Search
+Console reports such sitemap entries as "Page with redirect".
+
+Internal `href="about.html"` links are left as they are and cost one 308 apiece,
+which visitors never notice. GitHub Pages serves both forms without redirecting,
+so the clean form is correct on either host.
+
+**A new page therefore needs three things:** a clean-URL canonical and `og:url`, a
+`<loc>` in `sitemap.xml`, and its photos added as `<image:image>` entries.
 
 ---
 
@@ -92,6 +106,13 @@ Done, and worth not undoing:
   is the usual cause of a local ranking drop.
 - **Search Console** property connected; submit `sitemap.xml` again after any
   structural change, and check Coverage for the `github.io` duplicate above.
+- **`sitemap.xml`** lists the seven indexable pages by clean URL, with `<lastmod>`
+  and `<image:image>` entries for the 23 on-page property photos, so the
+  photography can surface in Google Images. No `<priority>` or `<changefreq>` —
+  Google ignores both. Only `<image:loc>` is used; `image:caption`, `image:title`,
+  `image:license` and `image:geo_location` were deprecated in 2022. The two stock
+  shots (`attr-olpejeta.jpg`, `attr-solio.jpg`) are deliberately left out, since
+  they are not the property's own photography. `404.html` stays out too.
 - **Structured data**: `LodgingBusiness` (`index.html`), `FAQPage`
   (`contact.html`) and `BreadcrumbList` on every inner page. `sameAs` links
   Instagram, TikTok and the Google Business Profile (via its CID).
