@@ -107,6 +107,24 @@ p.lead {
 
 .section { padding-block: var(--section-y); }
 .section--soft { background: var(--bg-soft); }
+
+/* Home "Comforts" teaser: terrace photo with a flat translucent black
+   overlay so the copy stays legible. Scoped to this section only. */
+.section--comforts {
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../img/gal-terrace.avif") center bottom / cover no-repeat;
+  color: #fff;
+}
+.section--comforts h2 { color: #fff; }
+.section--comforts .eyebrow { color: rgba(255,255,255,0.8); }
+.section--comforts .chip {
+  color: #fff;
+  border-color: rgba(255,255,255,0.45);
+  background: rgba(0,0,0,0.35);
+}
+.section--comforts .btn--ghost { --btn-fg: #fff; --btn-bd: rgba(255,255,255,0.5); }
+.section--comforts .btn--ghost:hover { --btn-bg: #fff; --btn-fg: var(--ink); --btn-bd: #fff; }
 .section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
 
 .section-head { max-width: 62ch; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
@@ -423,7 +441,13 @@ input:focus, select:focus, textarea:focus {
 .faq details p { color: var(--muted); padding: 0 2.5rem 1.35rem 0; line-height: 1.65; margin-top: -0.25rem; }
 
 /* ---- CTA band --------------------------------------------------------- */
-.cta-band { background: var(--ink); color: #fff; text-align: center; }
+.cta-band {
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../img/cta-mtkenya.jpg") center / cover no-repeat,
+    var(--ink);
+  color: #fff; text-align: center;
+}
 .cta-band h2 { color: #fff; }
 .cta-band p { color: rgba(255,255,255,0.82); max-width: 52ch; margin: 1rem auto 0; }
 .cta-band .btn-row { justify-content: center; margin-top: 2rem; }
@@ -528,6 +552,83 @@ input:focus, select:focus, textarea:focus {
   .footer-grid { grid-template-columns: 1fr; }
   .rate-strip { gap: 0.5rem; }
   .btn-row .btn { flex: 1 1 auto; }
+}
+
+/* ---- Christmas early-booking banner (seasonal, removable) --------------- */
+/* Slim bar pinned above the header inside .top-stick. Delete this block + the
+   .xmas-banner markup + the JS snippet to remove the campaign. */
+/* Sticky wrapper holding banner + header so both stick together.
+   Plain sticky (no transform/filter) keeps the fixed mobile nav working.
+   Delete with the campaign. */
+.top-stick {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+/* Anchor jumps clear the taller stuck stack while the banner is visible. */
+html:has(#xmasBanner:not([hidden])) {
+  scroll-padding-top: calc(var(--header-h) + 3rem);
+}
+.xmas-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0.3rem 2.75rem 0.3rem 1rem;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  text-align: center;
+}
+.xmas-banner[hidden] { display: none !important; }
+.xmas-banner__text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.xmas-banner__icon {
+  height: 1.5em;
+  width: auto;
+  flex: none;
+}
+.xmas-banner__text a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.xmas-banner__text a:hover { color: var(--ink-hover); }
+.xmas-banner__close {
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  border-radius: 4px;
+}
+.xmas-banner__close:hover { color: var(--ink); }
+.xmas-banner__close:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (max-width: 560px) {
+  .xmas-banner { font-size: 0.78rem; padding-inline: 0.75rem 2.5rem; }
+  .xmas-banner__text { gap: 0.4rem; }
 }
 
 /* ---- Reduced motion --------------------------------------------------- */

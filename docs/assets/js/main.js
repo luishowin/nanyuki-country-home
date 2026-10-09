@@ -166,6 +166,25 @@
     });
   }
 
+  /* ---- Christmas banner (seasonal, removable) --------------------------- */
+  var xmasBanner = document.getElementById("xmasBanner");
+  var xmasKey = "nch-xmas-banner-dismissed-v1";
+  if (xmasBanner) {
+    try {
+      if (window.sessionStorage && sessionStorage.getItem(xmasKey) === "1") {
+        xmasBanner.hidden = true;
+      }
+    } catch (e) {}
+    var xmasClose = xmasBanner.querySelector(".xmas-banner__close");
+    if (xmasClose) {
+      xmasClose.addEventListener("click", function (e) {
+        e.stopPropagation();
+        xmasBanner.hidden = true;
+        try { sessionStorage.setItem(xmasKey, "1"); } catch (err) {}
+      });
+    }
+  }
+
   /* ---- Footer year ------------------------------------------------------ */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
