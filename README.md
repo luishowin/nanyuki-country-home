@@ -72,7 +72,7 @@ output directory setting has to say `docs`, or the deployment serves nothing.
 Then confirm the deploy actually landed — the apex, not `github.io`:
 
 ```bash
-curl -s https://nanyukicountryhome.com/sitemap.xml | grep -c image:loc          # expect 23
+curl -s https://nanyukicountryhome.com/sitemap.xml | grep -c image:loc          # expect 28
 curl -s -o /dev/null -w "%{http_code}\n" https://nanyukicountryhome.com/privacy # expect 200
 curl -s https://nanyukicountryhome.com/ | grep -c REPLACE-WITH-DOMAIN            # expect 0
 ```
@@ -132,7 +132,7 @@ Done, and worth not undoing:
 - **Search Console** property connected; submit `sitemap.xml` again after any
   structural change, and check Coverage for the `github.io` duplicate above.
 - **`sitemap.xml`** lists the seven indexable pages by clean URL, with `<lastmod>`
-  and `<image:image>` entries for the 23 on-page property photos, so the
+  and `<image:image>` entries for the 28 on-page property photos, so the
   photography can surface in Google Images. No `<priority>` or `<changefreq>` —
   Google ignores both. Only `<image:loc>` is used; `image:caption`, `image:title`,
   `image:license` and `image:geo_location` were deprecated in 2022. The two stock
